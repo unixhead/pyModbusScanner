@@ -21,7 +21,6 @@ class modbusServer:
     connected = False
     address = "127.0.0.1"
     port = 502
-    debugLogData="modbusServer Debug Log\n"
 
     def __init__(self):
         self.modbusClientObj = ModbusClient() # reference to the pyModbusTCP object used
