@@ -14,11 +14,21 @@ Download the files pyModbusScanner-v0.2.py and SourceSans3-Regular.otf into the 
 `python pyModbusScanner`
 
 Fire it up, enter IP/port for modbus service, click "test connection" and verify that the status indicator goes green and says "Connected". 
-Then enter max/min values for either coils, registers or input registers and hit the relevant "scan" button, results should appear in the box beneath.
+Then enter max/min values for either coils, registers or input registers and hit the relevant "scan" button, results should appear in the box beneath. 
 
 Debug info gets dumped into the console so if it goes wrong hten there may be some hints in the terminal you launched it from. 
 
 License is Beerware
+
+# Modbus Scanning Notes
+Start with small ranges, especially if hitting a PLC with low resources! I should probably include a delay setting in a future version.
+
+Coil scanning will just show any coils that are set to 1 rather than 0 as they're boolean values, the registers will dump the values returned.
+
+Registers are 16 bit, but some implementations may use 32 bit by joining two together. This software will just show two separate 16 bit values. It may be possible to fingerprint modbus devices and work out these values properly, might be a future update!
+
+Spec is here: https://modbus.org/docs/Modbus_Messaging_Implementation_Guide_V1_0b.pdf
+
 
 # Test Environment
 If you need a modbus server to test with then grab Control Things Linux from here: https://www.controlthings.io/
