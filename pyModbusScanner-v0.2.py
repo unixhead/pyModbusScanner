@@ -360,8 +360,8 @@ with dpg.window(tag="Primary Window"):
     #scan coils
     dpg.add_tab_bar()
     dpg.add_button(label="Scan Coils", tag="scanCoilButton", callback=scanModbusCoils)
-    dpg.add_input_text( default_value="0",  tag="minCoil", label="min", width=50, indent=200)
-    dpg.add_input_text( default_value="65535",  tag="maxCoil", label="max", width=50, indent=300)
+    dpg.add_input_text( default_value="0",  tag="minCoil", label="min (0)", width=50, indent=200)
+    dpg.add_input_text( default_value="65535",  tag="maxCoil", label="max (65535)", width=50, indent=350)
     dpg.bind_item_theme("scanCoilButton", grey_txt_theme)
     coilGroup = dpg.add_group(horizontal=True)
     dpg.move_item("scanCoilButton", parent=coilGroup)
@@ -373,8 +373,8 @@ with dpg.window(tag="Primary Window"):
     # scan registers
     dpg.add_tab_bar()
     dpg.add_button(label="Scan Registers", tag="scanRegisterButton", callback=scanModbusRegisters)
-    dpg.add_input_text( default_value="0",  tag="minReg", label="min", width=50, indent=200)
-    dpg.add_input_text( default_value="65535",  tag="maxReg", label="max", width=50, indent=300)
+    dpg.add_input_text( default_value="0",  tag="minReg", label="min (0)", width=50, indent=200)
+    dpg.add_input_text( default_value="65535",  tag="maxReg", label="max (65535)", width=50, indent=350)
     dpg.bind_item_theme("scanRegisterButton", grey_txt_theme)
     registerGroup = dpg.add_group(horizontal=True)
     dpg.move_item("scanRegisterButton", parent=registerGroup)
@@ -388,8 +388,8 @@ with dpg.window(tag="Primary Window"):
     # scan input registers
     dpg.add_tab_bar()
     dpg.add_button(label="Scan Input Registers", tag="scanInputButton", callback=scanInputRegisters)
-    dpg.add_input_text( default_value="0",  tag="minInp", label="min", width=50, indent=200)
-    dpg.add_input_text( default_value="65535",  tag="maxInp", label="max", width=50, indent=300)
+    dpg.add_input_text( default_value="0",  tag="minInp", label="min (0)", width=50, indent=200)
+    dpg.add_input_text( default_value="65535",  tag="maxInp", label="max (65535)", width=50, indent=350)
     dpg.bind_item_theme("scanInputButton", grey_txt_theme)
     inputRegisterGroup = dpg.add_group(horizontal=True)
     dpg.move_item("scanInputButton", parent=inputRegisterGroup)
