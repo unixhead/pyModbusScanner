@@ -23,9 +23,9 @@ License is Beerware
 # Modbus Scanning Notes
 Start with small ranges, especially if hitting a PLC with low resources! I should probably include a delay setting in a future version.
 
-Coil scanning will just show the address (0-65536) of any coils that are set to 1 rather than 0 as they're boolean values, the registers will dump the values returned. 
+Coil scanning will just show the address (0-65536) of any coils that are set to 1 rather than 0 as they're boolean values, scanning the registers will output the values held in those registers. 
 
-The values are fairly meaningless on their own, you'd need more information to understand what they are representing and that isn't detailed in the protocol responses which are just addresses and values. There's no information in the protocol responses that might indicate whether that value is a button status, pressure reading, kitkats remaining in stock, number of games of tictactoe that have been won or any other possible value.
+The values are fairly meaningless on their own as you need the context of what they represent and that isn't directly detailed in the protocol responses, these  are just addresses and values. There's no information in the protocol responses that might indicate whether that value is a button status, pressure reading, kitkats remaining in stock, number of games of tictactoe that have been won or any other possible value.
 
 Registers are 16 bit, but some implementations may use 32 bit by joining two together. This software will just show two separate 16 bit values. 
 
