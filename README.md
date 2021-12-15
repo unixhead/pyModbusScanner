@@ -6,6 +6,8 @@ Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/py
 GUI components use the dearpygui framework: https://github.com/hoffstadt/DearPyGui
 
 # Usage
+Needs Python 3.x for the GUI library, if you're having a problem running it then drop me a line and will see if I can work out what's up. Only tested on Mint 20 at this point. 
+
 Requires pyModbusTCP and dearpygui to be installed with: 
 `sudo pip install dearpygui pyModbusTCP`
 
