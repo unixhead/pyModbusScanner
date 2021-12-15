@@ -23,7 +23,7 @@ Debug info gets dumped into the console so if it goes wrong hten there may be so
 License is Beerware
 
 # Modbus Scanning Notes
-Start with small ranges, especially if hitting a PLC with low resources! I should probably include a delay setting in a future version.
+Start with small port ranges, especially if hitting a PLC with low resources! I should probably include a delay setting in a future version.
 
 Coil scanning will just show the address (0-65536) of any coils that are set to 1 rather than 0 as they're boolean values, scanning the registers will output the values held in those registers. 
 
