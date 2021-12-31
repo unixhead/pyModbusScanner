@@ -37,7 +37,9 @@ Spec is here: https://modbus.org/docs/Modbus_Messaging_Implementation_Guide_V1_0
 
 
 # Test Environment
-If you need a modbus server to test with then grab Control Things Linux from here: https://www.controlthings.io/
+One option is to run the Modbus Server GUI that I'm working on: https://github.com/unixhead/pyModbusServerGUI
+
+Another is to use the excellent Control Things Linux from here: https://www.controlthings.io/
 Load up ModbusPal, hit "load" and open the included VoltageRegulator.xmpp (should be in /home/control/samples/Simulators/ModbusPal), click Run and that'll give you a Modbus Service to poke at. Output should be similar to that below.
 
 
