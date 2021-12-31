@@ -18,7 +18,7 @@ Download the files pyModbusScanner-v0.3.py and SourceSans3-Regular.otf into the 
 Fire it up, enter IP/port for modbus service, click "test connection" and verify that the status indicator goes green and says "Connected". 
 Then enter max/min values for either coils, registers or input registers and hit the relevant "scan" button, results should appear in the box beneath. 
 
-Debug info gets dumped into the console so if it goes wrong hten there may be some hints in the terminal you launched it from. 
+Debug info gets dumped into the console so if it goes wrong then there may be some hints in the terminal you launched it from. 
 
 License is Beerware
 
