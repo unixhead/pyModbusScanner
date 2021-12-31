@@ -234,11 +234,8 @@ class modbusServer:
                     output = output + ", "
 
                 if len(output) > linelen:
-                    #print("val: " +str(i) + " output: " + str(len(output)) + " linelen - mod: " + str(len(output) % linelen))
                     if len(output) % linelen > (linelen-6):
                         output = output + "\n"
-                        print("CR")
-
              
 
                 output = output + str(i)
@@ -371,7 +368,7 @@ with dpg.window(tag="Primary Window"):
     dpg.move_item("minCoil", parent=coilGroup)
     dpg.move_item("maxCoil", parent=coilGroup)
     dpg.add_progress_bar(label="Coil Scan Progress", tag="coilProgress")
-    dpg.add_input_text(default_value="Not Yet Scanned - Set min & max address values (below 65536) and click 'scan coils'.\nNote scanning thousands of coils will take a LONG time, recommended to do a few hundred to test at first!", tag="configuredCoils" , readonly=True, multiline=True)
+    dpg.add_input_text(default_value="Not Yet Scanned - Set min & max address values (below 65536) and click 'scan coils'.\nNote scanning thousands of coils will take a LONG time, recommended to do a few hundred to test at first!\n\nTypical Ranges:\n1-9999 discrete output coils\n10001 - 19999 - discrete input contacts ", tag="configuredCoils" , readonly=True, multiline=True)
     
 
 
@@ -383,8 +380,8 @@ with dpg.window(tag="Primary Window"):
     # scan registers
     dpg.add_tab_bar()
     dpg.add_button(label="Scan Registers", tag="scanRegisterButton", callback=scanModbusRegisters)
-    dpg.add_input_text( default_value="0",  tag="minReg", label="min (0)", width=50, indent=200)
-    dpg.add_input_text( default_value="65535",  tag="maxReg", label="max (65535)", width=50, indent=350)
+    dpg.add_input_text( default_value="40000",  tag="minReg", label="min (0)", width=50, indent=200)
+    dpg.add_input_text( default_value="49999",  tag="maxReg", label="max (65535)", width=50, indent=350)
     registerGroup = dpg.add_group(horizontal=True)
     dpg.move_item("scanRegisterButton", parent=registerGroup)
     dpg.move_item("minReg", parent=registerGroup)
@@ -397,8 +394,8 @@ with dpg.window(tag="Primary Window"):
     # scan input registers
     dpg.add_tab_bar()
     dpg.add_button(label="Scan Input Registers", tag="scanInputButton", callback=scanInputRegisters)
-    dpg.add_input_text( default_value="0",  tag="minInp", label="min (0)", width=50, indent=200)
-    dpg.add_input_text( default_value="65535",  tag="maxInp", label="max (65535)", width=50, indent=350)
+    dpg.add_input_text( default_value="30000",  tag="minInp", label="min (0)", width=50, indent=200)
+    dpg.add_input_text( default_value="39999",  tag="maxInp", label="max (65535)", width=50, indent=350)
     inputRegisterGroup = dpg.add_group(horizontal=True)
     dpg.move_item("scanInputButton", parent=inputRegisterGroup)
     dpg.move_item("minInp", parent=inputRegisterGroup)
