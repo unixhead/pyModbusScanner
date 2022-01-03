@@ -51,7 +51,6 @@ Another is to use the excellent Control Things Linux from here: https://www.cont
 Load up ModbusPal, hit "load" and open the included VoltageRegulator.xmpp (should be in /home/control/samples/Simulators/ModbusPal), click Run and that'll give you a Modbus Service to poke at. Output should be similar to that below.
 
 
-
 # Screenshot
 Reading Values
 ![Screenshot Reading Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss3.png)
