@@ -105,7 +105,7 @@ class modbusServer:
                 regContent = self.modbusClientObj.read_holding_registers(i)
 
 
-            self.debugLog("regContent returned " + str(regContent))
+            #self.debugLog("regContent returned " + str(regContent))
 
             if str(regContent) != "[0]":
                 self.registerCount = self.registerCount + 1
@@ -146,13 +146,13 @@ class modbusServer:
             #pyModbusTCP supports coil reading 0-65535 regardless of type
             regContent = self.modbusClientObj.read_coils(i)
 
-            self.debugLog("regContent returned " + str(regContent))
+            #self.debugLog("regContent returned " + str(regContent))
 
             if str(regContent) == "[True]":
-                self.debugLog("Found coil set at " + str(i))
+                #self.debugLog("Found coil set at " + str(i))
                 self.coilCount = self.coilCount + 1  
-            else:
-                self.debugLog("Error retreiving coil " + str(i))
+            #else:
+                #self.debugLog("Error retreiving coil " + str(i))
 
             if dpg != None:
                 dpg.configure_item(progressBar, default_value=(i-min)/(max-min-1))
@@ -176,7 +176,7 @@ class modbusServer:
         coilValue = self.modbusClientObj.read_coils(address)
         self.debugLog("value: " + str(coilValue))
         if str(coilValue) == "[True]":
-            self.debugLog("returning true")
+            #self.debugLog("returning true")
             return True
         else:
             return False
@@ -272,7 +272,6 @@ def testConnection(sender, app_data, user_data):
         dpg.bind_item_theme("connectionStatus", red_bg_theme)
 
 
-    debugLog(modbusServer.debugLog())
 
 
 def scanModbusCoils(sender, app_data):
