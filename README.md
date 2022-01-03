@@ -1,5 +1,5 @@
 # pyModbusScanner
-Basic GUI for probing modbus TCP data
+Basic GUI for probing modbus TCP data, also lets you attempt to write to coils and registers.
 
 Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/pyModbusTCP
 
