@@ -35,6 +35,14 @@ It may be possible to fingerprint modbus devices and provide more useful informa
 
 Spec is here: https://modbus.org/docs/Modbus_Messaging_Implementation_Guide_V1_0b.pdf
 
+# Writing Values
+The process for writing values with this client is:
+1 - Pick the address of the value you want to write, in the Modbus spec the R/W coils are 1-9999 and R/W registers are 40001-49999. Other values may be writable, but may not work as I think pyModbusTCP uses the spec to validate queries.
+2 - Click "Get Current" to load the value in that coil/register currently on the server. Note if it's a value that changes over time, e.g. a voltage, then this won't work very well.
+3 - Enter the new value in the "set value" box and click "set"
+4 - If we didn't get any error responses then the status will show green with text "success".
+5 - The client will then re-fetch that address from the server and re-populate the value box (next to the "get current" button). This should match up with the value you tried to set, if it doesn't then either the server has not accepted the updated value and responded like it has, or something else has changed it in the background.
+
 
 # Test Environment
 One option is to run the Modbus Server GUI that I'm working on: https://github.com/unixhead/pyModbusServerGUI
@@ -45,4 +53,8 @@ Load up ModbusPal, hit "load" and open the included VoltageRegulator.xmpp (shoul
 
 
 # Screenshot
-![Screenshot](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss2.png)
+Reading Values
+![Screenshot Reading Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss3.png)
+
+Writing Values
+![Screenshot Writing Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss4.png)
