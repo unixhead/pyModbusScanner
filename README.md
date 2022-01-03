@@ -45,4 +45,4 @@ Load up ModbusPal, hit "load" and open the included VoltageRegulator.xmpp (shoul
 
 
 # Screenshot
-![name-of-you-image](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss.png)
+![Screenshot](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss2.png)
