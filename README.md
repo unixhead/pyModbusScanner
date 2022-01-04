@@ -1,10 +1,5 @@
 # pyModbusScanner
-Basic GUI for probing modbus TCP data:
-![Screenshot Reading Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss3.png)
-
-It also lets you attempt to write to coils and registers.
-![Screenshot Writing Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss4.png)
-
+Basic GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers.
 
 Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/pyModbusTCP
 
@@ -21,6 +16,8 @@ Download the files pyModbusScanner-v0.x.py and SourceSans3-Regular.otf into the 
 
 Fire it up, enter IP/port for modbus service, click "test connection" and verify that the status indicator goes green and says "Connected". 
 Then enter max/min values for either coils, registers or input registers and hit the relevant "scan" button, results should appear in the box beneath. 
+
+![Screenshot Reading Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss3.png)
 
 Debug info gets dumped into the console so if it goes wrong then there may be some hints in the terminal you launched it from. 
 
@@ -53,6 +50,8 @@ The process for writing values with this client is:
 3. Enter the new value in the "set value" box and click "set"
 4. If we didn't get any error responses then the status will show green with text "success".
 5. The client will then re-fetch that address from the server and re-populate the value box (next to the "get current" button). This should match up with the value you tried to set, if it doesn't then either the server has not accepted the updated value and responded like it has, or something else has changed it in the background.
+
+![Screenshot Writing Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss4.png)
 
 # Test Environment
 One option is to run the Modbus Server GUI that I'm working on: https://github.com/unixhead/pyModbusServerGUI
