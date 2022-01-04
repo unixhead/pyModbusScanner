@@ -228,7 +228,7 @@ class modbusServer:
 
 
 
-    def showConfiguredRegisters(self):
+    def showConfiguredRegisters(self, min=0):
         if self.registerArray == None:
             self.debugLog("Empty register array")
             return False
@@ -236,7 +236,7 @@ class modbusServer:
         self.debugLog("showConfiguredRegisters on array size " + str(len(self.registerArray)))
         output = ""
         for i in range(0,len(self.registerArray)):
-            output = output + str(i) + ":" + str(self.registerArray[i]) + "\n"
+            output = output + str(i+int(min) ) + ":" + str(self.registerArray[i]) + "\n"
             
         return output
 
@@ -321,7 +321,7 @@ def scanModbusRegisters(sender, app_data):
     testConnection("uNF","uNF","uNF")
     dpg.configure_item("configuredRegisters", default_value="Scanning...")
     modbusServer.scanRegisters(dpg.get_value("minReg"), dpg.get_value("maxReg"), dpg,"registerProgress")
-    dpg.configure_item("configuredRegisters", default_value=modbusServer.showConfiguredRegisters())
+    dpg.configure_item("configuredRegisters", default_value=modbusServer.showConfiguredRegisters( dpg.get_value("minReg") ) )
 
 def setCoilGetValue(sender, app_data):
     debugLog("setCoilGetValue")
