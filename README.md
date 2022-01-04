@@ -45,7 +45,7 @@ A feature added in 0.6 is ability to look for values that are changing. Run a re
 
 # Writing Values
 The process for writing values with this client is:
-1. Pick the address of the value you want to write, in the Modbus spec the R/W coils are 1-9999 and R/W registers are 40001-49999. Other values may be writable, but may not work as I think pyModbusTCP uses the spec to validate queries.
+1. Pick the address of the value you want to write, in the Modbus spec the R/W coils are 1-9999 and R/W registers are 40001-49999. Other values may be writable.
 2. Click "Get Current" to load the value in that coil/register currently on the server. Note if it's a value that changes over time, e.g. a voltage, then this won't work very well.
 3. Enter the new value in the "set value" box and click "set"
 4. If we didn't get any error responses then the status will show green with text "success".
