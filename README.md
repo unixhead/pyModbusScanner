@@ -11,9 +11,11 @@ Needs Python 3.x for the GUI library, if you're having a problem running it then
 Requires pyModbusTCP and dearpygui to be installed with: 
 `sudo pip install dearpygui pyModbusTCP`
 
-Download the files pyModbusScanner-v0.3.py and SourceSans3-Regular.otf into the same directory, then run with:
+Download the files pyModbusScanner-v0.x.py and SourceSans3-Regular.otf into the same directory, then run with:
 
-`python pyModbusScanner-v0.3.py`
+`python pyModbusScanner-vx.y.py`
+
+(replace vx.y with whatever the version currently is, I keep forgetting to update this doc to reflect that, should probably stop using version numbers in file names!)
 
 Fire it up, enter IP/port for modbus service, click "test connection" and verify that the status indicator goes green and says "Connected". 
 Then enter max/min values for either coils, registers or input registers and hit the relevant "scan" button, results should appear in the box beneath. 
