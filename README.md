@@ -24,15 +24,19 @@ Debug info gets dumped into the console so if it goes wrong then there may be so
 License is Beerware
 
 # Modbus Scanning Notes
-Start with small port ranges, especially if hitting a PLC with low resources! I should probably include a delay setting in a future version.
+Addresses can be anything from 1-65535, there is a modbus spec that defines recognised ranges but devices may not follow the spec, so for enumeration it may be sensible to scan everything. The official address ranges are:
+- 1-9999 - discrete output coils R/W - binary
+- 10001 - 19999 - discrete input contacts R/O - binary
+- 30001 - 39999 - analog input registers - R/O - 16 bit int
+- 40001 - 49999 - analog output holding registers - R/W - 16 bit int
+
+It's sensible to start with small address ranges, especially if hitting a PLC with low resources.
 
 Coil scanning will just show the address of any coils that are set to 1 rather than 0 as they're boolean values, scanning the registers will output the values held in those registers. 
 
 The values are fairly meaningless on their own as you need the context of what they represent and that isn't directly detailed in the protocol responses, these  are just addresses and values. There's no information in the protocol responses that might indicate whether that value is a button status, pressure reading, kitkats remaining in stock, number of games of tictactoe that have been won or any other possible value.
 
-Registers are 16 bit, but some implementations may use 32 bit by joining two together. This software will just show two separate 16 bit values. 
-
-It may be possible to fingerprint modbus devices and provide more useful information, might be a future update!
+Registers are 16 bit, but some implementations may use 32 bit by joining two together. This software will just show two separate 16 bit values.
 
 Spec is here: https://modbus.org/docs/Modbus_Messaging_Implementation_Guide_V1_0b.pdf
 
