@@ -107,7 +107,7 @@ class modbusServer:
 
             #self.debugLog("regContent returned " + str(regContent))
 
-            if str(regContent) != "[0]":
+            if str(regContent) != "[0]" and str(regContent) != "None":
                 self.registerCount = self.registerCount + 1
 
             #self.registerArray.append(str(regContent))
@@ -292,7 +292,7 @@ class modbusServer:
         for i in range(0,len(self.registerArray)):
             if hidezero == True:
                 
-                if str(self.registerArray[i][1]) != "[0]":
+                if str(self.registerArray[i][1]) != "[0]" and str(self.registerArray[i][1]) != "None":
                     output = output + str(self.registerArray[i][0] ) + ":" + str(self.registerArray[i][1]) + "\n"
             else:
                 output = output + str(self.registerArray[i][0] ) + ":" + str(self.registerArray[i][1]) + "\n"
