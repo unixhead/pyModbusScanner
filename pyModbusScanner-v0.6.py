@@ -654,7 +654,7 @@ with dpg.window(tag="Primary Window"):
     # set register values
     dpg.add_tab_bar()
     with dpg.collapsing_header(label="Configure Registers"):
-        dpg.add_text("Use this to set register values on a Modbus Server, typically addresses 40001-49999 would be writable", tag="setRegisterText")
+        dpg.add_text("Use this to set register values on a Modbus Server, typically addresses 40001-49999 may be writable", tag="setRegisterText")
         dpg.add_text("Address to Configure:", tag="setRegisterAddressText")
         dpg.add_input_text( default_value="40001",  tag="setRegisterAddress", indent=200, width=50)
         dpg.add_button(label="Get Current", tag="setRegisterGetValueButton", callback=setRegisterGetValue, width=100, indent=400)
