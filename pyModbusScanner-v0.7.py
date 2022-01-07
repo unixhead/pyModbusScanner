@@ -373,7 +373,7 @@ class modbusServer:
                     tmp_max_y = max_y + gap_y
                     tmp_min_y = min_y - gap_y
 
-                self.debugLog("min max y = " + str(min_y) + " : " + str(max_y) )
+                #self.debugLog("min max y = " + str(min_y) + " : " + str(max_y) )
                     
                 dpg.set_axis_limits("y_axis", tmp_min_y, tmp_max_y)
                 dpg.set_axis_limits("x_axis", min_x, max_x)
