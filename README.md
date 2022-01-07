@@ -1,5 +1,5 @@
 # pyModbusScanner
-Basic GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers.
+GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers.
 
 Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/pyModbusTCP
 
@@ -56,6 +56,10 @@ The process for writing values with this client is:
 5. The client will then re-fetch that address from the server and re-populate the value box (next to the "get current" button). This should match up with the value you tried to set, if it doesn't then either the server has not accepted the updated value and responded like it has, or something else has changed it in the background.
 
 ![Screenshot Writing Values](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss4.png)
+
+# Changing Values
+This function plots a changing value onto a graph, enter the register address to use as a data source, optionally click "get current" to double check it's readable and correct, set the duration as how long you want to collect data for and the gap to how long to leave between fetching data. Then hit "collect data" and if all is well it'll start rendering onto the graph as shown on screenshot below:
+![Screenshot time series](https://raw.githubusercontent.com/unixhead/pyModbusScanner/main/ss-time.png)
 
 # Test Environment
 One option is to run the Modbus Server GUI that I'm working on: https://github.com/unixhead/pyModbusServerGUI
