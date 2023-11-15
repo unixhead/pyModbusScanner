@@ -9,7 +9,7 @@ GUI components use the dearpygui framework: https://github.com/hoffstadt/DearPyG
 Requires Python 3.x with pyModbusTCP and dearpygui to be installed with: 
 `sudo pip install dearpygui pyModbusTCP`
 
-NOTE: At the moment (nov 23) then my code is struggling with the pymodbustcp release and doens't work, apologies! One solution is to copy this folder into your pyModbusScanner folder. This is an older version of pyModbusTCP that works OK with my code. I have dropped the pyModbusTCP maintainer a note to see if it's something that can be changed, if not then I'll update this project to make it behave. 
+NOTE: At the moment (nov 23) then my code is struggling with the pymodbustcp release and doesn't work, apologies! One solution is to copy this folder into your pyModbusScanner folder. This is an older version of pyModbusTCP that works OK with my code. I have dropped the pyModbusTCP maintainer a note to see if it's something that can be changed, if not then I'll update this project to make it behave. 
 https://github.com/unixhead/pyModbusServerGUI/tree/main/pyModbusTCP
 
 
