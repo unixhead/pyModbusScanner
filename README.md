@@ -1,5 +1,5 @@
 # pyModbusScanner
-GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers.
+GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers. It's fairly basic and treats everything as integers, whereas some Modbus data needs treating as hex or other values, I intend to add some more format conversion capabilities at some point, but best laid plans and all that. 
 
 Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/pyModbusTCP
 
