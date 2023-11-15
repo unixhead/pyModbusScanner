@@ -1,5 +1,7 @@
 # pyModbusScanner
-GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers. It's fairly basic and treats everything as integers, whereas some Modbus data needs treating as hex or other values, I intend to add some more format conversion capabilities at some point, but best laid plans and all that. 
+GUI for probing modbus TCP data, it also lets you attempt to write to coils and registers. 
+
+It's fairly basic and treats everything as integers, whereas some Modbus data needs treating as hex or other values, I intend to add some more format conversion capabilities at some point, but best laid plans and all that. If you're doing some analysis and suspect you need a different format, e.g. looking for character values, one option is to run wireshark to capture the data transfer, then use TCP->Follow Stream which will dump the contents into a window and allow you to decode to various formats.
 
 Makes use of pyModbusTCP for all the hard work: https://github.com/sourceperl/pyModbusTCP
 
@@ -38,9 +40,9 @@ It's sensible to start with small address ranges, especially if hitting a PLC wi
 
 Coil scanning will just show the address of any coils that are set to 1 rather than 0 as they're boolean values, scanning the registers will output the values held in those registers. 
 
-The values are fairly meaningless on their own as you need the context of what they represent and that isn't directly detailed in the protocol responses, these  are just addresses and values. There's no information in the protocol responses that might indicate whether that value is a button status, pressure reading, kitkats remaining in stock, number of games of tictactoe that have been won or any other possible value.
+The values are fairly meaningless on their own as you need the context of what they represent and that isn't directly detailed in the protocol responses, these  are just addresses and values, which this software treats as integers and that may not be the device intention. There's no information in the protocol responses that might indicate whether that value is a button status, pressure reading, kitkats remaining in stock, number of games of tictactoe that have been won, a text message to be printed on a billboard or any other possible value.
 
-Registers are 16 bit, but some implementations may use 32 bit by joining two together. This software will just show two separate 16 bit values.
+Registers are 16 bit, but some implementations may use 32 bit values by joining two 16 bit registers together. This software will just show two separate 16 bit values.
 
 Spec is here: https://modbus.org/docs/Modbus_Messaging_Implementation_Guide_V1_0b.pdf
 
